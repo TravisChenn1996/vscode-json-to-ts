@@ -22,10 +22,10 @@ const visitor = UA("UA-97872528-2", getUserId());
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
-    commands.registerCommand("jsonToTs.fromSelection", transformFromSelection)
+    commands.registerCommand("jsonToTs2.fromSelection", transformFromSelection)
   );
   context.subscriptions.push(
-    commands.registerCommand("jsonToTs.fromClipboard", transformFromClipboard)
+    commands.registerCommand("jsonToTs2.fromClipboard", transformFromClipboard)
   );
 }
 

@@ -1,6 +1,6 @@
 {
-  "name": "json-to-ts",
-  "displayName": "JSON to TS",
+  "name": "json-to-ts-2",
+  "displayName": "JSON to TS 2",
   "description": "Convert JSON object to typescript interfaces",
   "version": "1.7.4",
   "publisher": "MariusAlchimavicius",
@@ -18,8 +18,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:jsonToTs.fromSelection",
-    "onCommand:jsonToTs.fromClipboard"
+    "onCommand:jsonToTs2.fromSelection",
+    "onCommand:jsonToTs2.fromClipboard"
   ],
   "repository": {
     "type": "git",
@@ -30,23 +30,23 @@
   "contributes": {
     "commands": [
       {
-        "command": "jsonToTs.fromSelection",
+        "command": "jsonToTs2.fromSelection",
         "title": "Selection",
         "category": "Cat Coding"
       },
       {
-        "command": "jsonToTs.fromClipboard",
+        "command": "jsonToTs2.fromClipboard",
         "title": "Do some refactoring",
         "category": "Cat Coding"
       }
     ],
     "keybindings": [
       {
-        "command": "jsonToTs.fromClipboard",
+        "command": "jsonToTs2.fromClipboard",
         "key": "shift+ctrl+alt+V"
       },
       {
-        "command": "jsonToTs.fromSelection",
+        "command": "jsonToTs2.fromSelection",
         "key": "shift+ctrl+alt+S"
       }
     ]
