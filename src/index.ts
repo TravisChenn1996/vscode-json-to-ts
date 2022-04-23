@@ -12,7 +12,8 @@ import {
   getViewColumn,
   validateLength,
   logEvent,
-  getUserId
+  getUserId,
+  keysToCamel
 } from "./lib";
 import * as UniversalAnalytics from "universal-analytics";
 
@@ -37,7 +38,7 @@ function transformFromSelection() {
     .then(validateLength)
     .then(parseJson)
     .then(json => {
-      return JsonToTS(json).reduce((a, b) => `${a}\n\n${b}`);
+      return JsonToTS(keysToCamel(json)).reduce((a, b) => `${a}\n\n${b}`);
     })
     .then(interfaces => {
       fs.writeFileSync(tmpFilePath, interfaces);
@@ -54,7 +55,7 @@ function transformFromClipboard() {
     .then(validateLength)
     .then(parseJson)
     .then(json => {
-      return JsonToTS(json).reduce((a, b) => `${a}\n\n${b}`);
+      return JsonToTS(keysToCamel(json)).reduce((a, b) => `${a}\n\n${b}`);
     })
     .then(interfaces => {
       pasteToMarker(interfaces);

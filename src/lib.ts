@@ -3,6 +3,7 @@ import * as os from "os";
 import * as copyPaste from "copy-paste";
 import { Client } from "universal-analytics";
 import * as UuidByString from "uuid-by-string";
+import { camelCase, isArray, isObject } from "lodash";
 
 export function getUserId(): string {
   const hostname = os.hostname();
@@ -90,3 +91,16 @@ export const validateLength = (text: any) => {
     return Promise.resolve(text);
   }
 };
+
+export function keysToCamel<T>(o: T): any {
+  if (isObject(o)) {
+    const n: any = {};
+    Object.keys(o).forEach((k) => {
+      n[camelCase(k)] = keysToCamel(o[k as keyof T]);
+    });
+    return n;
+  } else if (isArray(o)) {
+    return o.map(keysToCamel);
+  }
+  return o;
+}
